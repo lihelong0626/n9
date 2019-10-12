@@ -141,11 +141,15 @@ ul {
     border-bottom: 1px solid #4da4b4;
 }
 
-.homepage-box-top>.rightWrap>.rightWrap-box>.rewardLIst-box{
-    height: 310px;
-    margin-top: 5px;
+.homepage-box-top>.rightWrap>.rightWrap-box>.jsdiv>.rewardLIst-box{
     list-style: none;
-    overflow-y: auto;
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    padding: 10px;
+    margin: -2px;
+    text-align: center;
+    /*border-bottom: 1px solid #4da4b4;*/
 }
 .homepage-box-top>.box-top-center>.box-top-platforAmount>div>.amount{
     font-size: 30px;

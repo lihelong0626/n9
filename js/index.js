@@ -5,7 +5,53 @@ function checkIsNullOrEmpty(value) {
     return (value != null && value != undefined && !reg.test(value))
 }
 
+//正整数
+function checkInt(e) {
+    var re = new RegExp("^[0-9]*[1-9][0-9]*$");
+    if (e.value != "") {
+        if (!re.test(e.value)) {
+            alert("请输入1-29的整数");
+            //e.value = "";
+            //e.focus();
+        }
+    }
+}
 $(function(){
+
+    // center-box-ul
+    $("#inverstNum").change(function(){
+
+    });
+    $(".center-box-ul li:eq(0)").click(function(){
+        $("#inverstNum").val(1);
+    });
+
+    $(".center-box-ul li:eq(1)").click(function(){
+        $("#inverstNum").val(6);
+    });
+
+    $(".center-box-ul li:eq(2)").click(function(){
+        $("#inverstNum").val(11);
+    });
+
+    $(".center-box-ul li:eq(3)").click(function(){
+        $("#inverstNum").val(16);
+    });
+
+    $(".setAmount div:eq(0)").click(function(){
+        var inverstNum = $("#inverstNum");
+        if(inverstNum.val()>=2){
+            inverstNum.val(parseInt(inverstNum.val())-1);
+        }
+    });
+
+    $(".setAmount div:eq(1)").click(function(){
+        var inverstNum = $("#inverstNum");
+        if(inverstNum.val()<=28){
+            inverstNum.val(parseInt(inverstNum.val())+1);
+        }
+    });
+
     $("#rule").click(function(){
         var rule =  $(".rulediv");
         if(rule.is(':hidden')){
@@ -71,6 +117,7 @@ window.addEventListener('load', async() => {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
         // window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/71b7dcb12a69469aa61af1e049759342"));//正式地址
         window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/34dc58b3b7944a219797b3ce04a2fa7a"));
+        $(".center-box-p:eq(0)").css('display','block');
     }
     startApp();
 });
@@ -80,7 +127,7 @@ var heyue_addr;
 
 function startApp(){
     console.log("startApp.......");
-    heyue_addr = '0x484545267917f3C680277E87F1a391cDBC3f634d';
+    heyue_addr = '0x30fe17d77055C3A9E92E640c4437AFce47eE6852';
 
     Contract = new web3.eth.Contract(abi,heyue_addr);//合约
 
@@ -217,27 +264,32 @@ function getLevel() {
         });
 }
 
+function addressToUser(SELF_ADDR, ) {
+    /*console.log("getUserByAddress data: "+ data);
+    console.log("getUserByAddress achieveTime: "+ data.achieveTime);//"0"
+    console.log("getUserByAddress annualRing: "+ data.annualRing);//: "0"
+    console.log("getUserByAddress birth: "+ data.birth);//: "1570787422"
+    console.log("getUserByAddress investAmount: "+ data.investAmount);//: "2000000000000000000"
+    console.log("getUserByAddress inviter: "+ data.inviter);//: "0x398F8Fa9189E01aF8D48D0a9590A829201949532"
+    console.log("getUserByAddress invitersCount: "+ data.invitersCount);//: "0"
+    console.log("getUserByAddress rebirth: "+ data.rebirth);//: "1570787422"
+    console.log("getUserByAddress referCode: "+ data.referCode);//: "168871"
+    console.log("getUserByAddress userAddress: "+ data.userAddress);//: "0x4C2E128D580A187cA8D5bf3B9feB8160d4FBdb0f"*/
+    Contract.methods.addressToUser(SELF_ADDR).call()
+        .then(function (data) {
+
+            return data;
+        });
+}
 
 function getUserByAddress() {
     var SELF_ADDR = $("#address").val();
     // 获取用户信息
     Contract.methods.addressToUser(SELF_ADDR).call()
         .then(function (data) {
-            console.log("getUserByAddress data: "+ data);
-            console.log("getUserByAddress achieveTime: "+ data.achieveTime);//"0"
-            console.log("getUserByAddress annualRing: "+ data.annualRing);//: "0"
-            console.log("getUserByAddress birth: "+ data.birth);//: "1570787422"
-            console.log("getUserByAddress investAmount: "+ data.investAmount);//: "2000000000000000000"
-            console.log("getUserByAddress inviter: "+ data.inviter);//: "0x398F8Fa9189E01aF8D48D0a9590A829201949532"
-            console.log("getUserByAddress invitersCount: "+ data.invitersCount);//: "0"
-            console.log("getUserByAddress rebirth: "+ data.rebirth);//: "1570787422"
-            console.log("getUserByAddress referCode: "+ data.referCode);//: "168871"
-            console.log("getUserByAddress userAddress: "+ data.userAddress);//: "0x4C2E128D580A187cA8D5bf3B9feB8160d4FBdb0f"
-
             $(".box-top-left .list-bottom:eq(0)").text(data.referCode);
             $(".box-top-left .list-bottom:eq(2)").text(data.invitersCount);
             $(".box-top-left .list-bottom:eq(4)").text(web3.utils.fromWei(data.investAmount) +" ETH");
-
 
             var investAmount = parseFloat(web3.utils.fromWei(data.investAmount));
             var level = "";
@@ -255,23 +307,30 @@ function getUserByAddress() {
                 level = "M -1";
             }
             $(".box-top-left .list-bottom:eq(3)").text(level);
-
-
         });
 }
 
 function getTop10(){
+    $(".jsdiv").html("");
     Contract.methods.getTop10().call()
         .then(function (data) {
             console.log("getTop10 data: "+data);
 
-            var s = "";
             for(var i=0;i<data.length;i++){
                 var address=data[i];
                 if(address != "0x0000000000000000000000000000000000000000"){
-                    s+="<li  class=\"box-ul-li\">"+address+"</li>";
+                    Contract.methods.addressToUser(address).call()
+                        .then(function (data) {
+                            var userAddress = data.userAddress;
+                            userAddress = userAddress.substring(0,6) +"***"+ userAddress.substring(userAddress.length-6)
+                            var s = "<ul class=\"rewardLIst-box\">\n" +
+                                " <li class=\"box-ul-litwo\">"+userAddress+"</li><li class=\"box-ul-li\">"+data.invitersCount+"</li>\n" +
+                                " </ul>";
+                            console.log(s);
+                            $(".jsdiv").append(s);
+                        });
+
                 }
             }
-            $(".rewardLIst-box").html(s);
         });
 }
