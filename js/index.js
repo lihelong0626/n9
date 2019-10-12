@@ -269,9 +269,8 @@ function getTop10(){
             for(var i=0;i<data.length;i++){
                 var address=data[i];
                 if(address != "0x0000000000000000000000000000000000000000"){
-
+                    s+="<li  class=\"box-ul-li\">"+address+"</li>";
                 }
-                s+="<li  class=\"box-ul-li\">"++"</li>";
             }
             $(".rewardLIst-box").html(s);
         });
