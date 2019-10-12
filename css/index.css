@@ -1,0 +1,363 @@
+
+
+body{
+    background-color: blueviolet;
+    min-width: 1200px;
+}
+
+.top-box{
+    z-index: 0;
+    width: 1200px;
+    height: 100px;
+    border-bottom: 1px solid #4da4b4;
+    margin: 0 auto;
+    display: flex;
+}
+.top-box-logo{
+    width: 90px;
+    height: 90px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.homepage-box-top{
+    width: 1160px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.homepage-box-top>.box-top-left{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 500px;
+    width: 340px;
+    align-content: space-between;
+    border-radius: 5px;
+}
+.homepage-box-top>.box-top-left>.list{
+    box-shadow: 0 0 6px 3px rgba(33,32,63,.25);
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 32px;
+    height: 30%;
+    border-radius: 10px;
+}
+
+.top-box>.top-box-invite{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 150px;
+    height: 38px;
+    background-color: rgba(34,45,73,.7);
+    border-radius: 19px;
+    text-align: center;
+    margin-top: 31px;
+    line-height: 38px;
+    margin-left: 324px;
+    cursor: pointer;
+}
+
+.homepage-box-top>.box-top-center{
+    width: 550px;
+}
+
+.top-box>.top-box-center{
+    height: 32px;
+    display: flex;
+    margin-top: 34px;
+    font-size: 15px;
+    padding-left: 30px;
+    line-height: 32px;
+}
+.top-box>.top-box-center>span{
+    display: inline-block;
+    width: 77px;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.homepage-box-top>.box-top-center>.box-top-platforAmount{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.homepage-box-top>.rightWrap{
+    width: 307px;
+    height: 595px;
+}
+
+.homepage-box-top>.rightWrap>.rightWrap-box{
+    width: 100%;
+    height: 500px;
+    padding: 28px 25px;
+    background-color: hsla(0,0%,100%,.1);
+    border-radius: 5px;
+    box-shadow: 0 0 6px 3px rgba(33,22,63,.25);
+}
+
+.homepage-box-top>.rightWrap>.rightWrap-box>.rightWrap-box-ul{
+    text-align: center;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.homepage-box-top>.rightWrap>.rightWrap-box>.rightWrap-box-ul>.rightWrap-box-li{
+    color: #ff0;
+    font-size: 25px;
+}
+
+.homepage-box-top>.rightWrap>.rightWrap-box>.box-ul{
+    list-style: none;
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #4da4b4;
+}
+
+.homepage-box-top>.rightWrap>.rightWrap-box>.rewardLIst-box{
+    height: 310px;
+    margin-top: 5px;
+    list-style: none;
+    overflow-y: auto;
+}
+.homepage-box-top>.box-top-center>.box-top-platforAmount>div>.amount{
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.homepage-box-top>.box-top-center>.box-top-platforAmount>div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.homepage-box-top>.box-top-center>.center-box-ul{
+    width: 60%;
+    display: flex;
+    list-style: none;
+    font-size: 15px;
+    margin: 30px auto;
+    padding-inline-start: 0px;
+}
+
+.homepage-box-top>.box-top-center>.center-box-ul>li {
+    margin: 0 auto;
+    width: 70px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    border-radius: 5px;
+    background-color: #5b74ae;
+    cursor: pointer;
+}
+
+.homepage-box-top>.box-top-center>.setAmount {
+    width: 300px;
+    height: 70px;
+    display: flex;
+    margin: 0 auto;
+    font-size: 60px;
+}
+
+.homepage-box-top>.box-top-center>.setAmount>input {
+    width: 200px;
+    height: 60px;
+    background-color: transparent;
+    margin: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 40px;
+}
+
+element.style {
+    font-size: 15px;
+    color: red;
+    text-align: center;
+    display: none;
+}
+
+.homepage-box-top>.box-top-center>.list-top{
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.homepage-box-top>.box-top-center>button{
+    width: 310px;
+    height: 75px;
+    margin-left: 0px;
+    color: #20b2aa;
+    font-size: 35px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+
+
+.bottom-box {
+    width: 1200px;
+    height: 174px;
+    margin: 0 auto;
+    border-top: 1px solid #4da4b4;
+    display: flex;
+}
+
+.bottom-box>div {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.bottom-box>div>a{
+    color: #ccc;
+    display: block;
+    margin-top: 10px;
+}
+
+.bottom-box a{
+    text-decoration: none;
+}
+
+
+.about-us{
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 650px;
+    height: 400px;
+    padding: 20px;
+    background-color: #772ce2;
+    z-index: 9999;
+}
+
+.about-us>img{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.about-us>div{
+    width: 610px;
+    height: 310px;
+    font-size: 15px;
+    overflow-y: auto;
+    margin-top: 25px;
+}
+.rulediv>div>p{
+    text-align: left;
+}
+
+.homepage-box-top > .box-top-center > .center-box-p {
+    width: 350px;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px auto 0px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 30px 10px;
+    border-radius: 10px;
+}
+
+.homepage-box-top > .box-top-center > .center-box-p > p {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.Recommendation {
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(90deg,#20b2aa,#506ab4);
+    width: 320px;
+    height: 220px;
+}
+.Recommendation>img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.Recommendation>p{
+    font-size: 25px;
+}
+
+.Recommendation>.invitors{
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    padding-left: 10px;
+    background-color: #2c2b52;
+    border: 0;
+    border-radius: 5px;
+}
+
+.Recommendation>.smallTil{
+    text-align: right;
+    line-height: 42px;
+    font-size: 13px;
+    float: left;
+}
+.Recommendation>.smallTilerror{
+    text-align: right;
+    line-height: 42px;
+    font-size: 13px;
+    float: right;
+    color: red;
+}
+.Recommendation>.invest{
+    background-size: 200% 100%;
+    background-repeat: repeat;
+    transform: translateZ(0);
+    font-size: 20px;
+    text-align: center;
+    color: #20b2aa;
+    border: none;
+    border-radius: 8px;
+    width: 156px;
+    height: 30px;
+    cursor: pointer;
+}

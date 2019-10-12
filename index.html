@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>N9 Win</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/index.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <script type="application/javascript">
+
+    </script>
+</head>
+<body>
+<div id="app">
+    <div class="top-box">
+        <img src="./img/logo.png" alt="" class="top-box-logo">
+        <div class="top-box-invite">邀请链接</div>
+        <div class="top-box-center">
+            <span>
+                <a data-v-4cb5594e="" href="https://home.fairwin.me" target="_blank">官网</a>
+            </span>
+            <span id = "rule">规则</span>
+            <span>关于我们</span>
+            <span>公告</span>
+        </div>
+    </div>
+    <div class="homepage-box-top">
+        <div class="box-top-left">
+            <div  class="list">
+                <p class="list-top">邀请码</p>
+                <p  class="list-bottom" style="cursor: pointer;">一</p>
+            </div>
+            <div class="list">
+                <p  class="list-top">节点数</p>
+                <p  class="list-bottom">0</p>
+            </div>
+            <div  class="list">
+                <p  class="list-top">竞赛邀请数</p>
+                <p  class="list-bottom">0</p>
+            </div>
+            <div  class="list">
+                <p  class="list-top">节点等级</p>
+                <p  class="list-bottom">M 0</p>
+            </div>
+            <div  class="list">
+                <p  class="list-top">入股总额</p>
+                <p  class="list-bottom">0</p>
+            </div>
+            <div  class="list">
+                <p class="list-top">钱包余额</p>
+                <p class="list-bottom" >0ETH</p>
+            </div>
+        </div>
+        <div class="box-top-center">
+            <h2>采用以太幣付费的公平分红游戏</h2>
+            <h3 ><a  href="#/fair" class="">可被证明的公平</a><span >分红游戏由简单的</span><a  href="https://cn.etherscan.com/address/0xa699153E046531b7580Da3E59d139fB8844e3F85" target="_blank">开源合约提供支持</a></h3>
+            <div  class="box-top-platforAmount">
+                <h3  class="plat">所有赌注</h3>
+                <div >
+                    <img  src="./img/eth.png" alt="" />
+                    <span  class="amount">11711ETH</span>
+                </div>
+                <div >
+                    <span >1011 赌注</span>
+                </div>
+            </div>
+            <ul  class="center-box-ul">
+                <li >1ETH</li>
+                <li >6ETH</li>
+                <li >11ETH</li>
+                <li >16ETH</li>
+            </ul>
+            <div  class="setAmount">
+                <div  style="cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    -
+                </div>
+                <input  type="text" value="1" id="inverstNum"/>
+                <div  style="cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                    +
+                </div>
+            </div>
+            <p  style="font-size: 15px; color: red; text-align: center; display: none;">请输入1-29的整数</p>
+            <p  style="font-size: 15px; color: red; text-align: center; display: none;">本次最多可投注 29ETH </p>
+            <p  class="list-top">您的金额</p>
+            <button  style="background-color: white;" id="inverst">投注 </button>
+            <div  class="center-box-p" style="display: block;">
+                <div  style="display: flex; width: 220px; margin: 0px auto;">
+                    <img  src="./img/matamask.png" alt="" style="margin-bottom: 10px; width: 40px; height: 40px;" />
+                    <h2 >请先安装MetaMask</h2>
+                </div>
+                <a  href="https://metamask.io" target="_blank">点击此处去安装</a>
+            </div>
+            <div  class="center-box-p" style="display: block;">
+                <div  style="display: flex; width: 220px; margin: 0px auto;">
+                    <img  src="./img/matamask.png" alt="" style="margin-bottom: 10px; width: 40px; height: 40px;" />
+                    <h2 >切换到主网</h2>
+                </div>
+                <p >我们的游戏仅在主网上提供-请通过钱包进行切换</p>
+            </div>
+        </div>
+        <div  class="rightWrap">
+            <div  class="rightWrap-box">
+                <ul  class="rightWrap-box-ul">
+                    <li  class="rightWrap-box-li">邀请记录</li>
+                </ul>
+                <ul  class="box-ul">
+                    <li  class="box-ul-li">地址</li>
+                    <li  class="box-ul-litwo">奖赏</li>
+                </ul>
+                <ul  class="rewardLIst-box"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-box">
+        <div>
+            <h4>我们的游戏</h4>
+            <a href="https://bet.fairwin.me" target="_blank">博彩</a>
+            <a href="#/home" class="router-link-exact-active router-link-active">金字塔</a>
+        </div>
+        <div>
+            <h4>区块链</h4>
+            <a href="https://cn.etherscan.com/address/0x36938c7297d037c54b3e50c496f6c4d5a1b44086" target="_blank" id = "amount">您的余额 0 以太币 </a>
+            <a href="https://cn.etherscan.com/" target="_blank">网络: main net </a>
+            <a href="https://cn.etherscan.com/address/0xa699153E046531b7580Da3E59d139fB8844e3F85" target="_blank">智能合约</a>
+        </div>
+        <div>
+            <h4>联系我们</h4>
+            <a href="https://t.me/fairwinme" target="_blank">电报</a>
+            <a href="mailto:fairwin.me@gmail.com" target="_blank">电子邮件</a>
+            <a href="#/Service" class="">服务条款</a>
+        </div>
+    </div>
+    <div class="about-us rulediv" style="display: none">
+        <img src="./img/close.png" alt="" style="cursor: pointer;" class="closeImg"/>
+        <p>规则</p>
+        <div >
+            <p>1、入股区间：1-15ETH， 入股金额必须为整数。</p>
+            <p>2、入股期5天后本金解冻，解冻后不计算分红，节点奖励正常计算，可随时提现，提现后不计算节点奖励。</p>
+            <p>3、会员等级为V1、V2、V3，入股1-5ETH为V1，入股6-10ETH为V2，入股11-15ETH为V3。</p>
+            <p>4、入股收益：V1每日分红0.5%，V2每日分红0.7%，V3每日分红1%。</p>
+            <p>5、节点奖励：V1：只获得1代奖励，1代每日分红的50%，V2：只获得2代奖励，1代每日分红的70%，2代每日分红的50%，V3：可获取25代奖励，1代每日分红的100%，2代每日分红的70%，3代每日分红的50%，4代至10代每日分红的10%，11至20代每日分红的5%，21-25代每日分红的1%。</p>
+            <p>6、奖励烧伤：自己账户金额除以15为烧伤基数。不同等级有不同烧伤系数，V1为30%，V2为60%，V3为100%，例如：A推荐B，A入股5ETH，B入股15ETH，则A每日得到的奖金为（15*1/100）*50%*5/15*30% 。如果B先投注，则A在未来5天奖励发放时都得不到B的推荐奖励。</p>
+            <p>7、入股金额的4%会自动划拨到专项账户，其中2%用于生态应用开发及建设，1%用于市场开发，1%用于创始团队奖励，应用每月收益的70%反补进分红游戏.</p>
+            <p>8、 分红及节点奖励每日自动发放。</p>
+            <p>9、重启机制：如果合约余额小于1，将自动启动重启机制，重启时所有人账户都会归0，但是节点关系不变，并且开始新一轮游戏。</p>
+            <p>10、FOMO机制：当游戏重启时，会对重启前最后投注的10名玩家返还10倍投注额，例如，玩家A在重启前投注了15个ETH，并且位于最后投注的10个地址内，则重启发生时会得到150个ETH。返还金额从手续费地址划拨。</p>
+            <p>11、慈善基金会机制：所有玩家每次得到的分红及推荐奖励总和的10%会自动划拨到基金会地址，当游戏重启，会将基金会地址的所有ETH加权平均分配给最后一轮未出局玩家。 </p>
+            <p>12、投机者烧伤机制：当检测到单玩家多账户，系统会自动判定并正常计算分红奖励，不计算推荐奖励。</p>
+        </div>
+    </div>
+    <div  class="Recommendation" style="display: none">
+        <img  src="./img/close.png" alt="" class="closeImg">
+        <p >你的推荐码</p>
+        <input  type="text" required="required" class="invitors" value="168870">
+        <div  class="smallTil">Default is 168870</div>
+        <div  class="smallTilerror" style="display: none" >推荐码不符合规范</div>
+        <button  class="invest" >确认</button></div>
+    <input type="hidden" value="" id="address">
+</div>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/web3.min.js"></script>
+<script src="./js/webabi.js"></script>
+<script src="./js/index.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
